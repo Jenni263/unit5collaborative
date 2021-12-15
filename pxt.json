@@ -3,7 +3,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "swan's extension": "pub:02107-76536-64616-44022"
+        "swan's extension": "pub:12054-32931-82296-77965"
     },
     "files": [
         "main.blocks",
