@@ -2,7 +2,8 @@
     "name": "collaborative",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "swan's extension": "pub:02107-76536-64616-44022"
     },
     "files": [
         "main.blocks",
