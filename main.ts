@@ -66,10 +66,13 @@ function coin () {
         . . f d d d f . 
         . . . f f f . . 
         `],
-    1000,
+    200,
     true
     )
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
 function jump () {
     monkey.setVelocity(0, -50)
     pause(500)
@@ -233,3 +236,4 @@ monkey = sprites.create(img`
 controller.moveSprite(monkey)
 monkey.y = 100
 monkey.x = 0
+coin()
