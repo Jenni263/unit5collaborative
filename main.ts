@@ -8,7 +8,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     jump()
     pause(1000)
 })
-function coin () {
+function coin2 () {
     animation.runImageAnimation(
     coinAnimation,
     [img`
