@@ -236,4 +236,4 @@ monkey = sprites.create(img`
 controller.moveSprite(monkey)
 monkey.y = 100
 monkey.x = 0
-coin()
+coin2()
