@@ -73,10 +73,12 @@ function coin2 () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     ghost.destroy()
+    music.pewPew.play()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     coinAnimation.destroy()
+    music.powerUp.play()
 })
 function jump () {
     monkey.setVelocity(0, -50)
@@ -272,6 +274,6 @@ monkey.y = 100
 monkey.x = 0
 coin2()
 while (info.life() > 0) {
-    music.playMelody("F B A F G D A F ", 120)
+    music.powerDown.play()
     monkey.destroy()
 }
