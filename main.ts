@@ -70,6 +70,10 @@ function coin2 () {
     true
     )
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    ghost.destroy()
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     coinAnimation.destroy()
@@ -82,10 +86,6 @@ function jump () {
     monkey.setVelocity(0, 0)
     monkey.y = 100
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeScoreBy(-1)
-    ghost.destroy()
-})
 let monkey: Sprite = null
 let coinAnimation: Sprite = null
 let ghost: Sprite = null
@@ -211,6 +211,7 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
+info.setLife(3)
 ghost = sprites.create(img`
     ........................
     ........................
@@ -236,7 +237,7 @@ ghost = sprites.create(img`
     ........................
     ........................
     ........................
-    `, SpriteKind.Enemy)
+    `, SpriteKind.Projectile)
 ghost.setPosition(135, 97)
 coinAnimation = sprites.create(img`
     . . b b b b . . 
@@ -272,4 +273,5 @@ monkey.x = 0
 coin2()
 while (info.life() > 0) {
     music.playMelody("F B A F G D A F ", 120)
+    monkey.destroy()
 }
