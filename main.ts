@@ -75,9 +75,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSpr
 })
 function jump () {
     monkey.setVelocity(0, -50)
-    pause(500)
+    pause(1000)
     monkey.setVelocity(0, 50)
-    pause(500)
+    pause(1000)
     monkey.setVelocity(0, 0)
     monkey.y = 100
 }
