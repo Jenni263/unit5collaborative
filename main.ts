@@ -273,7 +273,7 @@ controller.moveSprite(monkey)
 monkey.y = 100
 monkey.x = 0
 coin2()
-while (info.life() > 0) {
+while (info.life() < 0) {
     music.powerDown.play()
     monkey.destroy()
 }
