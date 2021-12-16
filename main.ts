@@ -72,6 +72,7 @@ function coin2 () {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    coinAnimation.destroy()
 })
 function jump () {
     monkey.setVelocity(0, -50)
